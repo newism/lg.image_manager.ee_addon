@@ -368,8 +368,7 @@ class Lg_image_manager {
 			$r = "<script type='text/javascript' src='" . $this->settings['script_folder_path'] . "mcimagemanager.js' ></script>\n";
 			$r .= "\n<script type='text/javascript' charset='utf-8'>
 				function filterFunc(data) {
-					console.log(data);
-				    data.url = data.url.toUpperCase(); // Converts the URL to uppercase
+					return data.url;
 				}
 			</script>";
 			// add the script string before the closing head tag
