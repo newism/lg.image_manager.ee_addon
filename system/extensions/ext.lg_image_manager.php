@@ -221,7 +221,7 @@ class Lg_image_manager {
 		// Set which blocks are displayed
 		$items = array(
 			"date_block" => "block",
-			"select_block" => "none",
+			"select_block" => "block",
 			"pre_populate" => "none",
 			"text_block" => "none",
 			"textarea_block" => "none",
@@ -302,10 +302,13 @@ class Lg_image_manager {
 		if($row["field_type"] == $this->type)
 		{
 			// create the input field
-			$r .= $DSP->input_hidden('field_ft_'.$row['field_id'],$row['field_fmt']);
-			$r .= $DSP->input_text("field_id_" . $row['field_id'], $field_data, '200', '600', 'input', '500px', '', TRUE);
+			$r .= $DSP->input_hidden('field_ft_'.$row['field_id'], "none");
+			$r .= $DSP->input_text("field_id_" . $row['field_id'], $field_data, '200', '600', 'input', '600px', '', TRUE);
 			// add the javascript to launch the file manager
-			$r .= "\n<a href='javascript:mcImageManager.open(\"entryform\",\"field_id_" . $row['field_id'] . "\",\"\",\"\", { remove_script_host:true, insert_filter : filterFunc } });'>";
+			$r .= "\n<a href='javascript:mcImageManager.open(\"entryform\",\"field_id_" . $row['field_id'] . "\",\"\",\"\", {
+					remove_script_host:true,
+					insert_filter : filterFunc
+				});'>";
 			// add the image button
 			$r .= "\n\t<img src='" . $this->settings['script_folder_path'] . "../pages/im/img/insertimage.gif' border='0' style='margin-left:4px; position:relative; top:5px;' />";
 			// close the link
@@ -368,7 +371,7 @@ class Lg_image_manager {
 			$r = "<script type='text/javascript' src='" . $this->settings['script_folder_path'] . "mcimagemanager.js' ></script>\n";
 			$r .= "\n<script type='text/javascript' charset='utf-8'>
 				function filterFunc(data) {
-					return data.url;
+				    data.url = '<img src=\"'+data.url+'\" height=\"'+data.custom.height+'\" width=\"'+data.custom.width+'\" />';
 				}
 			</script>";
 			// add the script string before the closing head tag
