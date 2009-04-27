@@ -6,7 +6,7 @@
 * /system/extensions/ folder in your ExpressionEngine installation.
 *
 * @package LgImageManager
-* @version 1.2.0
+* @version 1.3.0
 * @author Leevi Graham <http://leevigraham.com>
 * @copyright 2007
 * @see http://leevigraham.com/cms-customisation/expressionengine/addon/lg-image-manager/
@@ -22,7 +22,7 @@ if ( ! defined('EXT')) exit('Invalid file request');
 * This extension adds a new custom field type to {@link http://expressionengine.com ExpressionEngine} that integrates {@link http://tinymce.moxiecode.com/paypal/item_filemanager.php Moxiecode File Manager}. 
 *
 * @package LgImageManager
-* @version 1.2.0
+* @version 1.3.0
 * @author Leevi Graham <http://leevigraham.com>
 * @copyright 2007
 * @see http://leevigraham.com/cms-customisation/expressionengine/addon/lg-image-manager/
@@ -49,7 +49,7 @@ class Lg_image_manager {
 	* Extension version
 	* @var string
 	*/
-	var $version			= '1.2.0';
+	var $version			= '1.3.0';
 
 	/**
 	* Extension description
