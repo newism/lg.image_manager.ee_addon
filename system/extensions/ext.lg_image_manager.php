@@ -305,7 +305,7 @@ class Lg_image_manager {
 			$r .= $DSP->input_hidden('field_ft_'.$row['field_id'],$row['field_fmt']);
 			$r .= $DSP->input_text("field_id_" . $row['field_id'], $field_data, '200', '600', 'input', '500px', '', TRUE);
 			// add the javascript to launch the file manager
-			$r .= "\n<a href='javascript:mcImageManager.open(\"entryform\",\"field_id_" . $row['field_id'] . "\",\"\",\"\", { remove_script_host:true, insert_filter : filterFunc } });'>";
+			$r .= "\n<a href='javascript:mcImageManager.open(\"entryform\",\"field_id_" . $row['field_id'] . "\",\"\",\"\", { remove_script_host:true, insert_filter : filterFunc });'>";
 			// add the image button
 			$r .= "\n\t<img src='" . $this->settings['script_folder_path'] . "../pages/im/img/insertimage.gif' border='0' style='margin-left:4px; position:relative; top:5px;' />";
 			// close the link
