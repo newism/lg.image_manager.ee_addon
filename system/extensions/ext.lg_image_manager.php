@@ -302,7 +302,7 @@ class Lg_image_manager {
 		if($row["field_type"] == $this->type)
 		{
 			// create the input field
-			$r .= $DSP->input_hidden('field_ft_'.$row['field_id'],$row['field_fmt']);
+			$r .= $DSP->input_hidden('field_ft_'.$row['field_id'], 'none');
 			$r .= $DSP->input_text("field_id_" . $row['field_id'], $field_data, '200', '600', 'input', '500px', '', TRUE);
 			// add the javascript to launch the file manager
 			$r .= "\n<a href='javascript:mcImageManager.open(\"entryform\",\"field_id_" . $row['field_id'] . "\",\"\",\"\", { remove_script_host:true, insert_filter : filterFunc });'>";
